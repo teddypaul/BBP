@@ -5,5 +5,6 @@ public class Test {
 		System.out.println("ㅎㅇㅎㄹㄱㄴㅉㅇ");
 		
 		// 시험중 잘 되는지??
+		// 잘됩니다.
 	} 
 }
