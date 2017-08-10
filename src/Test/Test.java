@@ -2,5 +2,5 @@ package Test;
 
 public class Test {
 //晦決
-//JP
+//JPいしぞ;びっ戚買たか
 }
