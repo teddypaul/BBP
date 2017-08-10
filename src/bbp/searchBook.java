@@ -42,7 +42,7 @@ public class searchBook extends JFrame{
 		this.searchField.setPreferredSize(new Dimension(200,30));
 		this.searchButton.setPreferredSize(new Dimension(70,30));//검색필드와 버튼의 사이즈를 넣어주고 
 		c.gridy = 0; c.gridx = 0;
-		this.add(pane, c);// 패널에 담아준다.
+		this.add(pane, c);// 패널에 담아준다.//
 		c.gridy = 1; c.gridx = 0;
 		
 		this.add(sc, c);
