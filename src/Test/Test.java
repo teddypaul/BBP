@@ -1,7 +1,7 @@
 package Test;
 
 public class Test {
-//晦決
-//JPいしぞ;びっ戚買たか
-	//蓄亜
+	public static void main(String[] args) {
+		System.out.println("ぞしぞぉぁいすし");
+	}
 }
