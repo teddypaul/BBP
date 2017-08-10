@@ -19,8 +19,9 @@ import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.table.DefaultTableModel;
 
 public class searchBook extends JFrame{
+	private JTextArea area = new JTextArea();
 	private JTextField searchField = new JTextField();//검색입력창
-	private JButton searchButton = new JButton("검색");//검색실행버튼
+	private JButton searchButton = new JButton("searching");//검색실행버튼
 	DefaultTableModel model = new DefaultTableModel();                  
 	private JTable table = new JTable(model); //검색결과를 보여줄 리스트(테이블에 담아볼까 합니다)
 	private JScrollPane sc = new JScrollPane(table);//리스트를 스크롤 창으로
@@ -39,12 +40,12 @@ public class searchBook extends JFrame{
 		
 		this.pane.add(searchField);
 		this.pane.add(searchButton);
-		this.searchField.setPreferredSize(new Dimension(200,30));
-		this.searchButton.setPreferredSize(new Dimension(70,30));//검색필드와 버튼의 사이즈를 넣어주고 
+		this.searchField.setPreferredSize(new Dimension(250,30));
+		this.searchButton.setPreferredSize(new Dimension(90,30));//검색필드와 버튼의 사이즈를 넣어주고 
 		c.gridy = 0; c.gridx = 0;
 		this.add(pane, c);// 패널에 담아준다.//
 		c.gridy = 1; c.gridx = 0;
-		
+		this.table.setAutoscrolls(true);//오토스크롤
 		this.add(sc, c);
 		this.sc.setPreferredSize(new Dimension(350,400));
 		
