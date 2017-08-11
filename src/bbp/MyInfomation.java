@@ -18,7 +18,6 @@ public class MyInfomation extends JFrame{
 			add(ingbook);
 			add(endbook);
 			
-			
 		}
 		
 	public void infoVis() {
