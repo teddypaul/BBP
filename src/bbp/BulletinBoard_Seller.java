@@ -14,7 +14,7 @@ import javax.swing.JTable;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.table.DefaultTableModel;
-
+//판매자로부터 책 등록
 public class BulletinBoard_Seller extends JDialog{
 
 	private JLabel title = new JLabel("제목 :");
@@ -40,8 +40,8 @@ public class BulletinBoard_Seller extends JDialog{
 		this.title.setBounds(10,0,30,30);
 		this.add(title);
 
-		this.buttonPurchase.setBounds(220,400,80,30);
-		this.buttonBasket.setBounds(300,400,80,30);
+		this.buttonPurchase.setBounds(235,620,80,30);
+		this.buttonBasket.setBounds(315,620,80,30);
 		this.add(buttonPurchase);
 		this.add(buttonBasket);
 
@@ -58,11 +58,11 @@ public class BulletinBoard_Seller extends JDialog{
 	}
 
 	public void eventInit(){
-
+		
 	}
 
 	public BulletinBoard_Seller(){
-		this.setSize(400, 500);
+		this.setSize(420, 700);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
