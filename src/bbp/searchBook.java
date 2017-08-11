@@ -17,7 +17,7 @@ import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.table.DefaultTableModel;
-
+//도서 검색 기능
 public class searchBook extends JFrame{
 	private JTextArea area = new JTextArea();
 	private JTextField searchField = new JTextField();//검색입력창
