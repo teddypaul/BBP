@@ -1,15 +1,15 @@
 package bbp.DTO;
 
 public class UserprofileDTO {
-	private String id;
-	private String pw;
-	private String name;
-	private int phonenumber;
-	private String email;
-	private String university;
-	private String address;
-	private int userclass;
-	private String mymail;
+	private String id;			//아이디
+	private String pw;			//패스워드
+	private String name;		//유저이름
+	private int phonenumber;	//유저폰넘버
+	private String email;		//유저메일
+	private String university;	//유저 학교 
+	private String address;		//유저 주 거래 인근 주소
+	private int userclass;		//유저 신뢰도 등급
+	private String mymail;		//유저 메일함
 	
 	public String getId() {
 		return id;

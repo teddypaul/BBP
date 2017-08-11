@@ -1,8 +1,8 @@
 package bbp.DTO;
 
 public class UniversityDTO {
-	private String universityname;
-	private String universityaddress;
+	private String universityname; 		//학교이름
+	private String universityaddress;	//학교 주소
 	
 	public String getUniversityname() {
 		return universityname;
