@@ -30,8 +30,14 @@ public class searchBook extends JFrame{
 		this.searchButton.addActionListener(new ActionListener() {//버튼을 누를때 작동할 내용
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			
+
 		}});
+		this.searchField.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {//검색창에서 엔터키 누를때 버튼 눌렀을 때와 같은 동작실행되게 
+			
+			}
+		});
 		}
 	private void compInit() {
 		this.setLayout(new GridBagLayout());
