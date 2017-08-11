@@ -11,7 +11,7 @@ import javax.swing.JTable;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.table.DefaultTableModel;
-//책 등록 and 등록된 책 보기
+//책 등록 and 등록된 책 보기.
 public class BulletinBoard extends JDialog{
 	//클래스말고 메서드로 (메서드 부르면 실행되게)
 	
