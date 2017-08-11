@@ -5,7 +5,7 @@ import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-
+//나의 정보
 
 public class MyInfomation extends JFrame{
 		private JButton upbook = new JButton("등록한책");

@@ -2,12 +2,12 @@ package bbp.DTO;
 
 public class AddressDTO {
 	private int seq;
-	private String zipcode;
-	private String sido;
-	private String gugun;
-	private String dong;
-	private String ri;
-	private String bunji;
+	private String zipcode; //우편번호
+	private String sido;	//시
+	private String gugun;	//구,군
+	private String dong;	//동
+	private String ri;		//리
+	private String bunji;	//번지
 	public int getSeq() {
 		return seq;
 	}
