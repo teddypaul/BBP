@@ -18,8 +18,8 @@ public class AddressDAO {
 	public void insertMemberAddress() throws Exception {
 		Connection con = this.getConnect();
 	}
-	public 
-	public ArrayList showBookList() throws Exception {
+	 
+	public ArrayList showBookList(String address) throws Exception {
 		Connection con = this.getConnect();
 		String sql = "select bookName from  where address=? ";
 		PreparedStatement pstat = con.prepareStatement(sql);
@@ -28,10 +28,10 @@ public class AddressDAO {
 		
 		ArrayList result = new ArrayList();
 		while(rs.next()) {
-			String bookList = rs.getString("bookName");
-			String address = rs.getString("address");
-			result.add(bookList);
-			result.add(address);
+			String bList = rs.getString("bookName");
+			String addr = rs.getString("address");
+			result.add(bList);
+			result.add(addr);
 		}
 		con.commit();
 		con.close();

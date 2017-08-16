@@ -14,6 +14,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Vector;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -53,42 +54,39 @@ public class searchBook extends JFrame{
 
 	private void eventInit() {
 		this.searchButton.addActionListener(new ActionListener() {//버튼을 누를때 작동할 내용
-			public void actionPerformed(ActionEvent e) {
-				String addr = searchField.getText();
-				
-				ArrayList name;
-				try {
-					name = new AddressDAO().showBookList();
-					for(int i=0 ; i<=name.size();i++) {
-						model.insertRow(i, name.get(i));
+			public void actionPerformed(ActionEvent a) {
+				String address = searchField.getText();
+				//				dos.writeUTF(address);
+				//				dos.flush();
 
-						if(addr.contains(name)) {
-							dos.writeUTF(addr);
-						}}dos.flush();
-				} catch (Exception e1) {
-					e1.printStackTrace();
+				ArrayList bList;
+				try {
+					bList = new AddressDAO().showBookList(address);
+					for(int i=0 ; i<=bList.size();i++) {
+						model.insertRow(i, (Vector) bList.get(i));
+					}//배열에서의 문자열 비교 -- list(   final List list1 =  new ArrayList();  Collections.addAll(list1, America);
+				} catch (Exception e) {
+					e.printStackTrace();
 				}
-				
 			}});
 		this.searchField.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {//검색창에서 엔터키 누를때 버튼 눌렀을 때와 같은 동작실행되게 
-				String addr = searchField.getText();
+				String address = searchField.getText();
 				String name = null;
-				ArrayList ad;
+				ArrayList addr;
 				try {
-					ad = new AddressDAO().showBookList();
-					for(int i=0 ; i<=ad.size();i++) {
-						name = (String) ad.get(i);
+					addr = new AddressDAO().showBookList(address);
+					for(int i=0 ; i<=addr.size();i++) {
+						name = (String) addr.get(i);
+						if(address.contains(name)) {
 
-						if(addr.contains(name)) {
-							dos.writeUTF(addr);
-						}}dos.flush();
+						}}
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
 			}});
-}
+	}
 	private void compInit() {
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
