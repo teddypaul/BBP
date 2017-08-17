@@ -30,14 +30,15 @@ import javax.swing.table.DefaultTableModel;
 
 import bbp.DAO.AddressDAO;
 //도서 검색 기능
-public class SearchBook extends JFrame{
+public class searchBook extends JFrame{
 	private AddressDAO address = new AddressDAO(); 
-	private JTextArea area = new JTextArea();
+	private JButton bArea = new JButton("지역검색");//검색실행버튼
+	private JButton bSchool = new JButton("학교검색");
+	private JButton bBook = new JButton("도서검색");
+	private JPanel bPane = new JPanel();
 	private JTextField searchField = new JTextField();//검색입력창
-	private JButton searchButton = new JButton("Searching");//검색실행버튼
-	DefaultTableModel model = new DefaultTableModel();                  
-	private JTable table = new JTable(model); //검색결과를 보여줄 리스트(테이블에 담아볼까 합니다)
-	private JScrollPane sc = new JScrollPane(table);//리스트를 스크롤 창으로
+	private JTextArea area = new JTextArea();//검색결과를 area에 담기로 햇습니다.;
+	private JScrollPane sc = new JScrollPane(area);//리스트를 스크롤 창으로
 	private JPanel pane = new JPanel();
 	private Socket sock;
 	private InputStream is ;
@@ -53,7 +54,7 @@ public class SearchBook extends JFrame{
 	}
 
 	private void eventInit() {
-		this.searchButton.addActionListener(new ActionListener() {//버튼을 누를때 작동할 내용
+		this.bArea.addActionListener(new ActionListener() {//버튼을 누를때 작동할 내용
 			public void actionPerformed(ActionEvent a) {
 				String address = searchField.getText();
 				//				dos.writeUTF(address);
@@ -63,8 +64,8 @@ public class SearchBook extends JFrame{
 				try {
 					bList = new AddressDAO().showBookList(address);
 					for(int i=0 ; i<=bList.size();i++) {
-						model.insertRow(i, (Vector) bList.get(i));
-					}//배열에서의 문자열 비교 -- list(   final List list1 =  new ArrayList();  Collections.addAll(list1, America);
+//						model.insertRow(i, (Vector) bList.get(i));
+					}//배열에서의 문자열 비교 -- list(final List list1 = new ArrayList(); Collections.addAll(list1, America);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -91,17 +92,25 @@ public class SearchBook extends JFrame{
 		this.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		c.insets = new Insets(10,0,0,10);
-
-		this.pane.add(searchField);
+        this.add(bArea);
+        this.bArea.setBorder(new BevelBorder(BevelBorder.RAISED));
+        this.bArea.setPreferredSize(new Dimension(90,30));//검색필드와 버튼의 사이즈를 넣어주고 
+        this.add(bSchool);
+        this.bSchool.setPreferredSize(new Dimension(90,30));
+        this.add(bBook);
+        this.bBook.setPreferredSize(new Dimension(90,30));
+        this.bPane.add(bArea);
+        this.bPane.add(bSchool);
+        this.bPane.add(bBook);
+        c.gridy=0; c.gridx=0;
+        this.add(bPane);
+        c.gridy=1; c.gridx=0;
+        this.add(searchField);
 		this.searchField.setBorder(new BevelBorder(BevelBorder.LOWERED));
-		this.pane.add(searchButton);
-		this.searchButton.setBorder(new BevelBorder(BevelBorder.RAISED));
-		this.searchField.setPreferredSize(new Dimension(260,30));
-		this.searchButton.setPreferredSize(new Dimension(90,30));//검색필드와 버튼의 사이즈를 넣어주고 
-		c.gridy = 0; c.gridx = 0;
-		this.add(pane, c);// 패널에 담아준다.//
-		c.gridy = 1; c.gridx = 0;
-		this.table.setAutoscrolls(true);//오토스크롤
+		this.searchField.setPreferredSize(new Dimension(350,30));
+		
+		c.gridy = 2; c.gridx = 0;
+		this.area.setAutoscrolls(true);//오토스크롤
 		this.add(sc, c);
 		this.sc.setPreferredSize(new Dimension(350,400));
 		//		this.sc.setBackground();
@@ -128,7 +137,7 @@ public class SearchBook extends JFrame{
 		} catch (Exception e) {
 			// If Nimbus is not available, you can set the GUI to another look and feel.
 		}
-		SearchBook sb = new SearchBook();
+		searchBook sb = new searchBook();
 		sb.searchBook();
 	}
 }
