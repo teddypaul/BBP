@@ -23,41 +23,33 @@ public class choiceAreaAndBook extends JFrame{
 
 	private void eventInit() {
 		this.bOne.addActionListener(new ActionListener() {//각 버튼을 누를 경우 나올 목록들
-			@Override
 			public void actionPerformed(ActionEvent e) {
 			}});
 
 		this.bTwo.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 			}});
 		this.bThree.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 			}});
 		this.bFour.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 			}});
 		this.bFive.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 			}});
 		this.bSix.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 			}});
 		this.bSeven.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 			}});
 		this.bEight.addActionListener(new ActionListener() {
-			@Override
 			public void actionPerformed(ActionEvent e) {
 			}});
 	}
 	private void compInit() {
-	//버튼의 위치는 이미지와 비교하여 boundlayout으로 잡아야할듯?
+		//버튼의 위치는 이미지와 비교하여 boundlayout으로 잡아야할듯?
 		this.add(bOne);
 		this.add(bTwo);
 		this.add(bThree);
@@ -66,13 +58,11 @@ public class choiceAreaAndBook extends JFrame{
 		this.add(bSix);
 		this.add(bSeven);
 		this.add(bEight);
-//		this.add
-
-
+		//		this.add
 	}
 	public void choice() {
 		this.setLayout(new FlowLayout());
-		this.setTitle("mapAndChoice");
+		this.setTitle("BookBank");
 		this.setSize(480,800);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);

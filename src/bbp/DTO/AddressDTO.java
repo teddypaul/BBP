@@ -8,6 +8,8 @@ public class AddressDTO {
 	private String dong;	//동
 	private String ri;		//리
 	private String bunji;	//번지
+	
+	
 	public int getSeq() {
 		return seq;
 	}
