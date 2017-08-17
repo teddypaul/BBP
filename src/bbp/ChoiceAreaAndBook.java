@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 
-public class choiceAreaAndBook extends JFrame{
+public class ChoiceAreaAndBook extends JFrame{
 	private JButton bOne = new JButton("양천구");//서울 지도를 8개 구역으로 나눌 경우 버튼 한개에 한구역의 이미지를 씌우기위해 버튼 8개 생성
 	private JButton bTwo = new JButton("강서구");//안에 "구 이름"은 임시로 넣었음
 	private JButton bThree = new JButton("강남구");
@@ -81,7 +81,7 @@ public class choiceAreaAndBook extends JFrame{
 		} catch (Exception e) {
 			// If Nimbus is not available, you can set the GUI to another look and feel.
 		}
-		choiceAreaAndBook caab = new choiceAreaAndBook();
+		ChoiceAreaAndBook caab = new ChoiceAreaAndBook();
 		caab.choice();
 
 	}

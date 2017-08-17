@@ -30,7 +30,7 @@ import javax.swing.table.DefaultTableModel;
 
 import bbp.DAO.AddressDAO;
 //도서 검색 기능
-public class searchBook extends JFrame{
+public class SearchBook extends JFrame{
 	private AddressDAO address = new AddressDAO(); 
 	private JTextArea area = new JTextArea();
 	private JTextField searchField = new JTextField();//검색입력창
@@ -128,7 +128,7 @@ public class searchBook extends JFrame{
 		} catch (Exception e) {
 			// If Nimbus is not available, you can set the GUI to another look and feel.
 		}
-		searchBook sb = new searchBook();
+		SearchBook sb = new SearchBook();
 		sb.searchBook();
 	}
 }
