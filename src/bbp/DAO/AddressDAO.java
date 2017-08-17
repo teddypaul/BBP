@@ -18,8 +18,39 @@ public class AddressDAO {
 	public void insertMemberAddress() throws Exception {
 		Connection con = this.getConnect();
 	}
+	public ArrayList showBookList(String name) throws Exception {
+		Connection con = this.getConnect();
+		String sql = "select bookName from where bookName like '%?%'";
+		PreparedStatement pstat = con.prepareStatement(sql);
+		pstat.setString(1,name);
+		ResultSet rs = pstat.executeQuery();
+		ArrayList result = new ArrayList();
+		while(rs.next()) {
+			String bList = rs.getString("bookName");
+			result.add(bList);
+		}
+		con.commit();
+		con.close();
+		return result;
+	}
+	
+	public ArrayList showUniverseBookList(String name) throws Exception {
+		Connection con = this.getConnect();
+		String sql = "select bookName from where schoolName=?";
+		PreparedStatement pstat = con.prepareStatement(sql);
+		pstat.setString(1,name);
+		ResultSet rs = pstat.executeQuery();
+		ArrayList result = new ArrayList();
+		while(rs.next()) {
+			String bList = rs.getString("bookName");
+			result.add(bList);
+		}
+		con.commit();
+		con.close();
+		return result;
+	}
 	 
-	public ArrayList showBookList(String address) throws Exception {
+	public ArrayList showLocalBookList(String address) throws Exception {
 		Connection con = this.getConnect();
 		String sql = "select bookName from  where address=? ";
 		PreparedStatement pstat = con.prepareStatement(sql);
