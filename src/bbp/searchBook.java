@@ -93,19 +93,24 @@ public class searchBook extends JFrame{
 		GridBagConstraints c = new GridBagConstraints();
 		c.insets = new Insets(10,0,0,10);
         this.add(bArea);
+        this.bArea.setBorderPainted(false);
         this.bArea.setBorder(new BevelBorder(BevelBorder.RAISED));
         this.bArea.setPreferredSize(new Dimension(90,30));//검색필드와 버튼의 사이즈를 넣어주고 
         this.add(bSchool);
+        this.bSchool.setBorderPainted(false);
+        this.bSchool.setBorder(new BevelBorder(BevelBorder.RAISED));
         this.bSchool.setPreferredSize(new Dimension(90,30));
         this.add(bBook);
+        this.bBook.setBorderPainted(false);
+        this.bBook.setBorder(new BevelBorder(BevelBorder.RAISED));
         this.bBook.setPreferredSize(new Dimension(90,30));
         this.bPane.add(bArea);
         this.bPane.add(bSchool);
         this.bPane.add(bBook);
         c.gridy=0; c.gridx=0;
-        this.add(bPane);
+        this.add(bPane,c);
         c.gridy=1; c.gridx=0;
-        this.add(searchField);
+        this.add(searchField,c);
 		this.searchField.setBorder(new BevelBorder(BevelBorder.LOWERED));
 		this.searchField.setPreferredSize(new Dimension(350,30));
 		
