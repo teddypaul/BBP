@@ -94,5 +94,8 @@ public class BookmanagementDTO {
 	public void setTimestamp(Timestamp timeStamp) {
 		this.timeStamp = timeStamp;
 	}
+
+		
+	
 	
 }

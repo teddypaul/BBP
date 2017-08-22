@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
-
-import bbp.MyInfomation;
 //회원가입 기능들
 public class UserProfileDAO {
 

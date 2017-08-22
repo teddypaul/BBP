@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import bbp.DTO.BookmanagementDTO;
+
 public class AddressDAO {
 
 	private Connection getConnect()throws Exception{
@@ -18,31 +20,18 @@ public class AddressDAO {
 	public void insertMemberAddress() throws Exception {
 		Connection con = this.getConnect();
 	}
-	public ArrayList showBookList(String name) throws Exception {
-		Connection con = this.getConnect();
-		String sql = "select bookName from where bookName like '%?%'";
-		PreparedStatement pstat = con.prepareStatement(sql);
-		pstat.setString(1,name);
-		ResultSet rs = pstat.executeQuery();
-		ArrayList result = new ArrayList();
-		while(rs.next()) {
-			String bList = rs.getString("bookName");
-			result.add(bList);
-		}
-		con.commit();
-		con.close();
-		return result;
-	}
 	
-	public ArrayList showUniverseBookList(String name) throws Exception {
+	
+	public ArrayList<BookmanagementDTO> showUniverseBookList(String name) throws Exception {
 		Connection con = this.getConnect();
 		String sql = "select bookName from where schoolName=?";
 		PreparedStatement pstat = con.prepareStatement(sql);
 		pstat.setString(1,name);
 		ResultSet rs = pstat.executeQuery();
-		ArrayList result = new ArrayList();
+		ArrayList<BookmanagementDTO> result = new ArrayList<BookmanagementDTO>();
 		while(rs.next()) {
-			String bList = rs.getString("bookName");
+			BookmanagementDTO bList = new BookmanagementDTO();
+		    bList.setBookName(rs.getString("bookName"));
 			result.add(bList);
 		}
 		con.commit();
@@ -50,19 +39,22 @@ public class AddressDAO {
 		return result;
 	}
 	 
-	public ArrayList showLocalBookList(String address) throws Exception {
+	public ArrayList<BookmanagementDTO> showLocalBookList(String address) throws Exception {
 		Connection con = this.getConnect();
 		String sql = "select bookName from  where address=? ";
 		PreparedStatement pstat = con.prepareStatement(sql);
 		pstat.setString(1,address);
 		ResultSet rs = pstat.executeQuery();
 		
-		ArrayList result = new ArrayList();
+		ArrayList<BookmanagementDTO> result = new ArrayList<BookmanagementDTO>();
 		while(rs.next()) {
-			String bList = rs.getString("bookName");
+			BookmanagementDTO bList = new BookmanagementDTO();
+			String bName = rs.getString("bookName");
 			String addr = rs.getString("address");
+			bList.setBookName(bName);
+			bList.setBookName(addr);
 			result.add(bList);
-			result.add(addr);
+			
 		}
 		con.commit();
 		con.close();
